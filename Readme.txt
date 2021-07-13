@@ -36,8 +36,16 @@ v-for = loops through a set of values , can also do a static number
 v-once and v-pre = not quite as useful, v-once will NOT update once its beeen rendered
 v-pre= will print out the inner text exactly how it is, including code(good for documentation)
  {{$NAME}} vue nin kendi variable i m bizim atadigimiz deger JSON.stringify() gibi dusun 
- 
-
+v-on or @
+    Extremely useful so there is a shortcut v-on is great for binding to events like click and mouseenter. you ae able to pass in a parameter for the event like(e). we can also use ternaries directly 
+    multiple bindigs can be 
+v-html = great for strings  that have html elements that need to be rendered 
+v-text = {{}} sembolun yerine gecer 
+modifiers =
+    v-model.trim gibi , it will strip any leading or trailing whitespace from the bound string 
+    v-model.number changes strings to number inputes
+    v-model.lazy wont populate the content automatically, it will wait to bind until an event happens.(it listens to change events instead of inputs)
+    
 
 official CLI 
     npm install -g @vue/cli  or vue ui
