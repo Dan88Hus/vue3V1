@@ -25,7 +25,12 @@ const App ={
  htm l de ise v-for="item for items"> {{item}}
  some of directives:
  v-if, v-else , v-else*if, v-show, v-for, v-text, v-html, v-slot, v-on, v-bind, v-model, v-model, v-pre, v-cloak, v-once, v-is 
- 
+ v-model: creates a relationship between the data in the instance/component and a form input, so you can dynamically update values 
+    v-model="message" setState in otomatigi textbox icin kullaniliyor genellile
+v-if/v-show: is a conditional that will display information dependong on meeting a requirement. this can be anything-buttons, forms, divs, components
+    disabled sarti gibi kullanilabilinit button i gizle goster veya template i 
+    v-show ise true/false gibi kullaniliyor genellikle toggle value 
+
 
 
 official CLI 
