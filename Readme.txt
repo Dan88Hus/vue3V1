@@ -30,7 +30,13 @@ const App ={
 v-if/v-show: is a conditional that will display information dependong on meeting a requirement. this can be anything-buttons, forms, divs, components
     disabled sarti gibi kullanilabilinit button i gizle goster veya template i 
     v-show ise true/false gibi kullaniliyor genellikle toggle value 
-
+v-bind or :
+    one of the most useful directives so there is a shortcut! we can use it for soo many things-class and style binding, creating dynamic props, etc..
+v-for = loops through a set of values , can also do a static number 
+v-once and v-pre = not quite as useful, v-once will NOT update once its beeen rendered
+v-pre= will print out the inner text exactly how it is, including code(good for documentation)
+ {{$NAME}} vue nin kendi variable i m bizim atadigimiz deger JSON.stringify() gibi dusun 
+ 
 
 
 official CLI 
