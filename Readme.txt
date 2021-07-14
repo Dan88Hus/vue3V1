@@ -141,3 +141,21 @@ why NUXT
 css transtions toggle , interpolate 2 state, but not creating loops 
 animatons da loops yapiliyor 
 transtition component 
+composition API - use mixins 
+    do I split components? or keep in big giant 1 component ? thats the COMPOSITION comes 
+    it allows you to encapsulate one piece of functinality so that you can use it in different components throughout the application 
+ref // tek useState gibi veya v-model 
+    we use ref in template the same, but if we use it in a function, we would extract with taco.value 
+    const count = ref(0)
+    function increment(){
+        count.value++ //whatever we access in ref, we call .value
+    }
+Reactive    // object olarak tum state leri yazabiliyoruz
+    return yaparken spread operator kullanabiliyoruz
+    if we use reactive, we no longer have to use .value to use the value elswhere. a little more familiar, similar to data in options 
+    const state= reactive({
+        count:0
+        })
+    function increment(){
+        state.count++
+    }
