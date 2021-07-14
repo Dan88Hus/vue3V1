@@ -259,10 +259,10 @@ export const getters = {
         return state.value
     }
 }
-export const mutaions - {
+export const mutaions - { //synchronously, are committting actions
     updateValue: (state, payload => { state.value = payload})
 }
-export const actions = {
+export const actions = { //async await, are dispatch
     updateActionValue({commit}){
         commit("updateValue", payload)
     }
@@ -275,3 +275,13 @@ export const actions = {
      store: store,
      ......
  })
+
+ usage, computed sections are preferred// computed altinda ...mapState ile tum statei getirebiliriz 
+ state(read)
+ this.$store.state.nameofthing
+ getter:(read)
+ this.$store.getters.nameofthing 
+ Mutations:(write)
+ this.$store.commit.nameofthings
+ actions:(write)
+ this.$store.dispatch.nameofthing 
