@@ -55,3 +55,18 @@ conditionals
     v-if v-else v-else-if v-show
     <template> tag ile tum container can be hide or shown 
 v-model turnery operator gibi calisiyor,
+methods = are bound to the vue instance, they are incredibly useful for functions you would like to access in directives 
+    vue de eventleri icin e parametrelerini gondermemize gerek yok 
+methods in forms 
+    methodlarda top level da arrow fuction kullanilmiyor yoksa this kayboluyor ama functionin icinde arrow kullanabiliyoruz 
+computed = computed propertirs are calculations that will be cached and will only update when needed.
+    highly performant but use with understanding
+computed                                        methods
+=========================================       ===========================================
+runds only when a dependecys has changed        runs whenever an update occurs
+cached                                          not cached
+should be used as a property,in place of        typically invoked from v-on/@, but flexible
+    data                                        getter/ setter 
+by default getter only, but you can define
+    a setter
+
