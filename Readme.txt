@@ -97,9 +97,47 @@ emits : child to parent
     <button @click="$emit("myevent")"></button>
     <button @click="$emit("myevent", param)"></button> when we want to report parent element we use 2nd argument 
 slots
-    can help to show be default text 
+    can help to show be default text , slot span gibi ama mesala ana componentin icerisinde bir baska componentin basligini yazdirmak gibi, nested components gibi dusun, child component te slot tagi icersinde yazilir parent componentte ise child component taginin icerisine yazilir 
 keep alive :is=""
     it remembers which component is selected and where we are 
-    
+single file templates=
+    <template>
+        <div></div>
+    </template>
+    <script>
+        //import libraries
+        <export default {
+            // write your vue component logic here 
+            components: {
 
-
+            }
+        }
+    </script>
+    <style scoped>
+        // write your styles for the component in here 
+    </style>
+    npm i -g @vue/cli 
+    snippets save lifes 
+        vue-vscode-snippets
+        vetur for vscode 
+    lifecycle hooks = also auto bind to the instance so that you can use the components state, and methods. for this reason you should not use Arrow function on lifecycle methods, as it will return to parent.
+        beforeCreate
+        created-great place to call API 
+        beforeMount
+        mounted-great place to work on DOM operations
+        beforeUpdate 
+        updated 
+        activated - associated for keep-alive
+        deactivated 
+        beforeUnmount 
+        unmounted 
+        errorCaptured 
+        renderTracked 
+        renderTriggered
+https://v3.vuejs.org/guide/instance.html#lifecycle-diagram 
+why NUXT
+    SSR/Static/Jamstack/SPA
+    router is in builtin 
+css transtions toggle , interpolate 2 state, but not creating loops 
+animatons da loops yapiliyor 
+transtition component 
