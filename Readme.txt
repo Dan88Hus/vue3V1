@@ -222,3 +222,56 @@ setup(){
         state
     }
 }
+-------
+ <script>
+        //import libraries
+        <export default {
+            kullaniyorduk ama <script setup> ta kullana biliriz 
+<script setup>
+const ...............
+</script> gibi  
+vuex 
+flux->redux->vuex 
+initial setup in store.js would look like this 
+import vue from 'vue'
+import Vuex from 'vue'
+vue.use(vues)
+export default new Vuex.Store({
+    state: {
+
+    },
+    mutations: {
+
+    },
+    actions:{
+
+    },
+    modules: {
+
+    }
+}) // alternatively nuxt  has another usage
+------------------------------
+export const state - () =>({
+    value: "myValue"
+})
+export const getters = {
+    getterValue: state -> {
+        return state.value
+    }
+}
+export const mutaions - {
+    updateValue: (state, payload => { state.value = payload})
+}
+export const actions = {
+    updateActionValue({commit}){
+        commit("updateValue", payload)
+    }
+}
+ in main.js file 
+ import {store} from ......
+
+ new Vue({
+     .....
+     store: store,
+     ......
+ })
