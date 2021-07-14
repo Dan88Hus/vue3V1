@@ -159,3 +159,66 @@ Reactive    // object olarak tum state leri yazabiliyoruz
     function increment(){
         state.count++
     }
+computed propertirs , watch & watchEffect 
+    reactive or ref gibi ama return functtions so we call computed 
+    setup(){
+        const state = reactive({
+            count: 0 ,
+            double: computed(()=> state.count*2)
+        })
+        return {
+            state
+        }
+    }
+watch = pretty much the same as the old options API, and you have access to the new and old values.
+    setup(){
+        const state = reactive({
+            count: 0
+        })
+        watch(state, (newValue, oldValue)=> {
+            console.log(newValue.count)
+        })
+        return {
+            state
+        }
+    }
+WatchEffect = Like watchers, with small differences. executes the function IMMEDIAYELY and tracks all the reactive state properties it used during the execution as dependencies
+    setup(){
+        const state = reactive({
+            count:0
+        })
+        watchEffect(()=> {
+            console.log(state.count)
+        })
+    }
+props = just like you are used to using them, they are reactive but passed into setup 
+    props: {
+        count: {
+            type: number,
+            required: true
+        }
+    }
+    setup(props){
+        watchEffect(()=>{
+            console.log(props.count)
+        })
+    }
+context = passed as the second argument in setup. things like $emit,$attrs, etc. would be accessed here 
+setup(props, context){ //context is the $sign as above line
+    context.emit("eventName")
+}
+setup(props,{emit}){
+    emit("eventName")
+}
+Lifecycle Hooks = Hooks are named the same but prefixed with ON in camelcase
+setup(){
+    const state = reactive({
+        count:0
+    })
+    onMounted(()=>{
+        console.log(state.count)
+    })
+    return {
+        state
+    }
+}
