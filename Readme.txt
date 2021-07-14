@@ -96,5 +96,10 @@ emits : child to parent
     <my-component @myevent="parentHandler"></my-component>
     <button @click="$emit("myevent")"></button>
     <button @click="$emit("myevent", param)"></button> when we want to report parent element we use 2nd argument 
+slots
+    can help to show be default text 
+keep alive :is=""
+    it remembers which component is selected and where we are 
     
+
 
