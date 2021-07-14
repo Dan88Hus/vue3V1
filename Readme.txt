@@ -65,8 +65,36 @@ computed                                        methods
 =========================================       ===========================================
 runds only when a dependecys has changed        runs whenever an update occurs
 cached                                          not cached
-should be used as a property,in place of        typically invoked from v-on/@, but flexible
+should be use d as a property,in place of        typically invoked from v-on/@, but flexible
     data                                        getter/ setter 
 by default getter only, but you can define
     a setter
+vue3 = FILTERs is difference ith vue2 
+watchers and Reactive = Reactive programming is programming with asynchronous data streams 
+proxies = An object that encases another object or function and allows you to intercept it. 
+new Proxy(target, handler) // 2 function i birbirine baglar Reflect ile birlikte 
+    Reflect Binds this properly //Proxies are wathing changes on value 
+    Proxies are ES6 /(previously Object.defineProperty)
+set() = A set is a series of any values, similar to an array, where any particular value can only be interested once.
+map() = A Map is a series of keys and values, similar to an object, but with some differences
+WeakMap() = similar to a MAP() but the references are held weakly, in other words, if you delete something, the reference can be garbage collected
+watchers = good for asynchronous updates, and updates/transtions with data changes 
+templates = 
+vue.js uses html based template syntax to bind the vue instance to the DOM, very useful for components 
+    templates are optional, you can also write render fuctions with optional jsx support 
+components a collection of elements that are encapsulated into a group that can be accessed through one single element     
+props = passing data from the parent to the child 
+    not using the state of the parent 
+        <child count="1"></child>
+    using the state of the parent 
+        <child :count="count"></child>
+emits : child to parent
+    Vuex and composition API 
+    <button @click="$emit("gettaco")">click me to order taco</button>
+        gettaco is special click event that we named
+        @gettaco="updateTaco is method name"
+    <my-component @myevent="parentHandler"></my-component>
+    <button @click="$emit("myevent")"></button>
+    <button @click="$emit("myevent", param)"></button> when we want to report parent element we use 2nd argument 
+    
 
