@@ -14,11 +14,12 @@ const store = new Vuex.Store({
     getter:{},
     mutations: {}
 })
-2.state&getter
 
+helpers: 
+mapState, mapActions, mapGetters,mapMutations
 
-
-
+vue create PROJECTNAME
+sometimes we need npm i node-sass sass-loader
 
 vuex+vue(SFC)
 vuex+vue router
