@@ -7,20 +7,33 @@
         <input v-model="characterinput" :id="option" :value="option" type="radio"/>
         <label :for="option">{{option}}</label>
       </p>
+      <button @click="pickCharacter">Pick your Character</button>
     </GameStateStart>
-    <div v-else>
-      <h1>Game welcome page</h1>
-    </div>
+    <section v-else>
+      <h1>{{ character }} is chosen as character</h1>
+
+      <Friend/>
+      <Score/>
+      <component :is="character"></component>
+
+    </section>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
   import GameStateStart from '@/components/GameStateStart.vue';
+  import Artist from '@/components/Artist.vue';
+  import Baker from '@/components/Baker.vue';
+  import Friend from '@/components/Friend.vue';
+  import Mechanic from '@/components/Mechanic.vue';
+  import Score from '@/components/Score.vue';
+  import Zombie from '@/components/Zombie.vue';
   
   export default {
     components: {
-      GameStateStart
+      GameStateStart,
+      Artist, Baker, Friend, Mechanic, Score, Zombie,
     },
     data(){
       return{
@@ -30,9 +43,16 @@
     computed: { //this.$store.state.uiState..... olabilirdi ama spread operator
     //so components get known states
       ...mapState([
-        'uiState',"questions","charecter", "characterChoices"
+        'uiState',"questions","character", "characterChoices"
       ])
     },
+    methods: {
+      pickCharacter(){
+        // console.log(this.characterinput)
+        this.$store.commit("pickCharacter", this.characterinput)
+        this.$store.commit("updateUIState","characterChosen") // we send string in 2nd arg
+      }
+    }
   };
 
 </script>
