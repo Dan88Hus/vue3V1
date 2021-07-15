@@ -15,6 +15,19 @@
       <Friend/>
       <Score/>
       <component :is="character"></component>
+      <div class="friendtalk">
+        <h3>{{questions[questionIndex].question}}</h3>
+      </div>
+
+      <div class="zombietalk">
+        <p v-for="character in characterChoices" :key="character">
+          <button @click="pickQuestion(character)"> 
+            {{questions[questionIndex]}}
+            <!-- {{questions[questionIndex][character]}} -->
+
+          </button>
+        </p>
+      </div>
 
     </section>
   </div>
@@ -43,7 +56,7 @@
     computed: { //this.$store.state.uiState..... olabilirdi ama spread operator
     //so components get known states
       ...mapState([
-        'uiState',"questions","character", "characterChoices"
+        'uiState',"questions","character", "characterChoices","questionIndex","score"
       ])
     },
     methods: {
@@ -51,7 +64,12 @@
         // console.log(this.characterinput)
         this.$store.commit("pickCharacter", this.characterinput)
         this.$store.commit("updateUIState","characterChosen") // we send string in 2nd arg
-      }
+      },
+      pickQuestion(character){
+        // console.log(character)// we want to send it store we do it by commiting
+        this.$store.commit("pickQuestion", character)
+      },
+
     }
   };
 
@@ -69,7 +87,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   background-size: cover !important;
   background: url("./assets/background.svg") no-repeat center center scroll,
     #29abe2;
